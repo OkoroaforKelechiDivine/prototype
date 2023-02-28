@@ -124,6 +124,7 @@
         progressBar.style.height = newHeight;
     }
 
+
     function showButtons() {
         document.querySelector('#btn-div').innerHTML = btnStates.map((btn, i) =>
             `<button class = 'bg-grey-200 flex items-center justify-center text-[14px] text-primary w-[177px] py-[15px] rounded-[10px]' onclick='handleBtnClick(${i}, ${btn.scrollTop})'>
