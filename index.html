@@ -130,9 +130,7 @@
                   ${btn?.star ? `<img src= ${btn.active ?  './assets/gold_star.svg'  : './assets/grey_star.svg'} alt="star" class='mr-2'/>` : `` }
                   ${btn.content}
                 </button>`
-
         ).join('');
-
         btnStates.forEach((btn, i) => {
             if (btn.active){
                 document.querySelectorAll('button')[i].classList.add('bg-secondary');
