@@ -91,11 +91,9 @@
     const progressBar = document.querySelector('.progress-bar.progress-bar-pink');
 
     const handleBtnClick = (i, currScrollT) => {
-
-        const updatedBtnStates = btnStates.map((btnState, idx) =>
-            {
+        const updatedBtnStates = btnStates.map(
+            (btnState, idx) => {
                 idx === i ? btnState.active = true : btnState.active = false
-
                 return btnState;
             }
         )
@@ -116,7 +114,6 @@
         handleScroll(scrollTop);
         checkOpacityLevel(scrollTop);
         onProgress(scrollTop);
-
     }
 
     const onProgress = (scrollT) => {
@@ -126,11 +123,8 @@
 
     function showButtons() {
         document.querySelector('#btn-div').innerHTML = btnStates.map((btn, i) =>
-            `<button class = 'bg-grey-200 flex items-center justify-center text-[14px] text-primary w-[177px] py-[15px] rounded-[10px]' onclick='handleBtnClick(${i}, ${btn.scrollTop})'>
-                  ${btn?.star ? `<img src= ${btn.active ?  './assets/gold_star.svg'  : './assets/grey_star.svg'} alt="star" class='mr-2'/>` : `` }
-                  ${btn.content}
-                </button>`
-        ).join('');
+            `<button class = 'bg-grey-200 flex items-center justify-center text-[14px] text-primary w-[177px] py-[15px] rounded-[10px]' onclick='handleBtnClick(${i}, ${btn.scrollTop})'> ${btn?.star ? `<img src= ${btn.active ?  './assets/gold_star.svg'  : './assets/grey_star.svg'} alt="star" class='mr-2'/>` : `` }${btn.content}
+            </button>`).join('');
         btnStates.forEach((btn, i) => {
             if (btn.active){
                 document.querySelectorAll('button')[i].classList.add('bg-secondary');
@@ -138,7 +132,6 @@
             }
         })
     }
-
     showButtons();
 
     const innerDivs = document.createElement('div');
@@ -215,11 +208,9 @@
                   <img src="./assets/line.svg" alt="linee" />
               </div>
               <p class='font-dm-sans  font-grey-300 text-[20px] mt-5'>Launch B2C Products <span class='text-secondary font-extrabold font-dm-sans'>(BIOTRANX)</span></p>
-            </div>
-        `;
+            </div>`;
 
     scrollDiv.append(innerDivs);
-
     function checkOpacityLevel(scrollT) {
         const allScrollDivs = document.querySelectorAll('div.det');
         console.log(allScrollDivs);
@@ -269,11 +260,7 @@
             allScrollDivs[6].classList.remove('opacity-10');
         }
     }
-
     checkOpacityLevel(0);
-
-
-
 </script>
 </body>
 </html>
